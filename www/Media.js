@@ -102,7 +102,9 @@ Media.prototype.seekTo = function (milliseconds, success) {
     exec(
         function (p) {
             me._position = p;
-            success();
+            if (success) {
+                success();
+            }
         },
         this.errorCallback,
         'Media',
